@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+venv/
+
+# Training datasets
+content_data/
+style_data/
+large_Dataset/
+
+# Temporary files
+*.save
+
+# Experiment checkpoints
+experiment/*
+!experiment/large_experiment/
+experiment/large_experiment/*
+!experiment/large_experiment/decoder_20.pth
+
+# Generated/uploaded images
+static/uploads/*
+!static/uploads/favicon.png
