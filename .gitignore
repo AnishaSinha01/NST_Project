@@ -26,3 +26,9 @@ experiment/large_experiment/*
 # Generated/uploaded images
 static/uploads/*
 !static/uploads/favicon.png
+
+# Test / generated images
+stylized_256.png
+stylized_output.png
+test_content.jpg
+test_style.jpg
