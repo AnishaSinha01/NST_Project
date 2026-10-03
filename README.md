@@ -6,10 +6,23 @@ Real-time arbitrary style transfer using **AdaIN (Adaptive Instance Normalizatio
 
 ## Examples
 
-| Content | Style | Output |
-|---|---|---|
-| ![](examples/brad_pitt.jpg) | ![](examples/sketch.png) | ![](examples/example1.png) |
-| ![](examples/brad_pitt.jpg) | ![](examples/picasso_seated_nude_hr.jpg) | ![](examples/example2.jpg) |
+<table align="center">
+  <tr>
+    <th align="center">Content</th>
+    <th align="center">Style</th>
+    <th align="center">Output</th>
+  </tr>
+  <tr>
+    <td align="center" valign="middle"><img src="examples/brad_pitt.jpg" width="250"></td>
+    <td align="center" valign="middle"><img src="examples/sketch.png" width="250"></td>
+    <td align="center" valign="middle"><img src="examples/example1.png" width="250"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle"><img src="examples/brad_pitt.jpg" width="250"></td>
+    <td align="center" valign="middle"><img src="examples/picasso_seated_nude_hr.jpg" width="250"></td>
+    <td align="center" valign="middle"><img src="examples/example2.jpg" width="250"></td>
+  </tr>
+</table>
 
 ## How it works
 
