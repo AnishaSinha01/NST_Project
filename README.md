@@ -58,7 +58,9 @@ python app.py
 
 Open http://127.0.0.1:5050
 
-## Train your own model
+## Training
+
+The trained decoder (`experiment/large_experiment/decoder_20.pth`) is already included, so you can run the app without training anything. To retrain from scratch:
 
 ```bash
 python train.py --content_dir <content_images> --style_dir <style_images> --epochs 20
