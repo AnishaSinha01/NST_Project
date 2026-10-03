@@ -1,6 +1,6 @@
 # StyleForge AI: Arbitrary Neural Style Transfer
 
-Real-time arbitrary style transfer using **AdaIN (Adaptive Instance Normalization)**, built with PyTorch, with a Flask web app and a Gradio demo.
+Arbitrary neural style transfer using **AdaIN (Adaptive Instance Normalization)**, built with PyTorch, with a Flask web app and a Gradio demo.
 
 **🚀 Live Demo:** https://huggingface.co/spaces/Anisha0911/NST_Project
 
@@ -13,14 +13,14 @@ Real-time arbitrary style transfer using **AdaIN (Adaptive Instance Normalizatio
     <th align="center">Output</th>
   </tr>
   <tr>
-    <td align="center" valign="middle"><img src="examples/brad_pitt.jpg" width="250"></td>
-    <td align="center" valign="middle"><img src="examples/sketch.png" width="250"></td>
-    <td align="center" valign="middle"><img src="examples/example1.png" width="250"></td>
+    <td align="center"><img src="examples/brad_pitt.jpg" width="250"></td>
+    <td align="center"><img src="examples/sketch.png" width="250"></td>
+    <td align="center"><img src="examples/example1.png" width="250"></td>
   </tr>
   <tr>
-    <td align="center" valign="middle"><img src="examples/brad_pitt.jpg" width="250"></td>
-    <td align="center" valign="middle"><img src="examples/picasso_seated_nude_hr.jpg" width="250"></td>
-    <td align="center" valign="middle"><img src="examples/example2.jpg" width="250"></td>
+    <td align="center"><img src="examples/brad_pitt.jpg" width="250"></td>
+    <td align="center"><img src="examples/picasso_seated_nude_hr.jpg" width="250"></td>
+    <td align="center"><img src="examples/example2.jpg" width="250"></td>
   </tr>
 </table>
 
@@ -28,44 +28,30 @@ Real-time arbitrary style transfer using **AdaIN (Adaptive Instance Normalizatio
 
 1. A VGG encoder extracts features from the content and style images.
 2. AdaIN matches the mean and variance of the content features to the style features.
-3. A decoder, trained from scratch, converts the result back into an image.
-4. A style-strength slider (alpha, 0 to 1) blends between the original and the fully stylized output.
+3. A decoder, trained from scratch, converts the transformed features back into an image.
+4. A style-strength slider (`alpha`, 0 to 1) blends the original content features with the stylized features.
 
-The decoder was trained for 20 epochs on about 40,000 content images and 8,600 style images.
+The decoder was trained for 20 epochs on approximately 40,000 content images and 8,600 style images.
 
-## Tech stack
+## Tech Stack
 
 Python, PyTorch, Torchvision, Flask, Gradio, Bootstrap
 
-## Project structure
+## Project Structure
 
 - `app.py`: Flask web app (run locally)
 - `app_gradio.py`: Gradio app (deployed on Hugging Face Spaces)
 - `train.py`: decoder training script
 - `utils/`: encoder, decoder and AdaIN code
 - `templates/`: Flask HTML template
+- `requirements.txt`: Python dependencies
 - `experiment/large_experiment/decoder_20.pth`: trained decoder
 - `vgg_normalised.pth`: pretrained VGG encoder weights
 
-## Run locally
+## Run Locally
 
 ```bash
 git clone https://github.com/AnishaSinha01/NST_Project
 cd NST_Project
 pip install -r requirements.txt
 python app.py
-```
-
-Open http://127.0.0.1:5050
-
-## Training
-
-The trained decoder (`experiment/large_experiment/decoder_20.pth`) is already included, so you can run the app without training anything. To retrain from scratch:
-
-```bash
-python train.py --content_dir <content_images> --style_dir <style_images> --epochs 20
-```
-
-## Reference
-
-Huang and Belongie, *Arbitrary Style Transfer in Real-time with Adaptive Instance Normalization*, ICCV 2017. https://arxiv.org/abs/1703.06868
